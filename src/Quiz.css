@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.question{
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+ul li button{
+    
+    height: 300px;
+    width: 350px;
+    
+}
+.displaybutton{
+    display:flex;
+   justify-content: space-around;
+   align-self: flex-end;
+  
+}
+
+.displaybutton li .active{
+    background-color: green !important;
+}
+.displaybutton li  .inactive{
+    background-color: red  !important;
+}
+.displaybutton li:nth-child(1) button
+{
+    background-color: #702de3;
+}
+.displaybutton li:nth-child(2) button
+{
+    background-color: #2a949c;
+}
+.displaybutton li:nth-child(3) button
+{
+    background-color: #d9b130;
+}
+.displaybutton li:nth-child(4) button
+{
+    background-color: #d93051;
+}
+
+li{
+    list-style: none;
+}
+.displaybutton li  button{
+    color: white;
+    font-size: 50px;
+    border-radius: 25px;
+    border: 2px solid white;
+    
+}
+.hiddendisplay{
+    display: none;
+}
+
+
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+ 
+    justify-content: center;
+    
+    
+}
+.goscreen{
+    font-size: 2em;
+    background-color: black;
+    color: white;
+    
+   
+    
+   
+}
+.displaymarks{
+    padding:200px;
+    color: white;
+}
+
+.maindisplay{
+    background-color: #331a33;
+    border-radius: 50px;
+    height: 300px;
+}
+.streakbutton{
+
+}
+.scoreclass{
+    background-color: black;
+}
