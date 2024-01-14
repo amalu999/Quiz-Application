@@ -9,18 +9,14 @@
     padding-bottom: 100px;
 }
 ul li button{
-    
-    height: 300px;
-    width: 350px;
-    
+     height: 300px;
+    width: 350px;    
 }
 .displaybutton{
     display:flex;
    justify-content: space-around;
    align-self: flex-end;
-  
 }
-
 .displaybutton li .active{
     background-color: green !important;
 }
@@ -43,7 +39,6 @@ ul li button{
 {
     background-color: #d93051;
 }
-
 li{
     list-style: none;
 }
@@ -51,32 +46,21 @@ li{
     color: white;
     font-size: 50px;
     border-radius: 25px;
-    border: 2px solid white;
-    
+    border: 2px solid white;  
 }
 .hiddendisplay{
     display: none;
 }
-
-
-
 .container{
     height: 100vh;
     display: flex;
     flex-direction: column;
- 
-    justify-content: center;
-    
-    
+    justify-content: center;   
 }
 .goscreen{
     font-size: 2em;
     background-color: black;
-    color: white;
-    
-   
-    
-   
+    color: white; 
 }
 .displaymarks{
     padding:200px;
@@ -88,9 +72,11 @@ li{
     border-radius: 50px;
     height: 300px;
 }
-.streakbutton{
-
-}
 .scoreclass{
     background-color: black;
+    height: 100px;
+    padding: 30px;
+}
+.maindisplay h2{
+    margin: 30px;
 }

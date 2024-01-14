@@ -15,7 +15,7 @@ const Header = () => {
         clearInterval(countdownInterval);
         setShowGo(true);
         setTimeout(() => {
-          navigate("/quiz");
+          //navigate("/quiz");
         }, 2000);
       }
     }, 2000);
