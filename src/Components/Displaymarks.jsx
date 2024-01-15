@@ -1,6 +1,6 @@
 import React from "react";
 
-const Displaymarks = ({ streak }) => {
+const Displaymarks = ({reset, streak }) => {
   return (
     <div className="displaymarks">
       <h1>End Quiz!!!!!</h1>
@@ -9,6 +9,7 @@ const Displaymarks = ({ streak }) => {
         <div className="scoreclass">
           <h3>Score {streak}</h3>
         </div>
+        {/* <button onClick={reset}>Play Again</button> */}
       </div>
     </div>
   );

@@ -4,15 +4,20 @@ import "../Quiz.css";
 import Displaymarks from "./Displaymarks";
 import { useNavigate } from "react-router-dom";
 var streak = 0;
-var userclicked = false;
 var automaticclick = false;
+var timeoutid = null;
 const Quiz = () => {
   const [questionindex, setQuestionIndex] = useState(0);
 
   const myRefs = useRef([]);
   const indexarr = [0, 1, 2, 3];
   const [answer, setAnswer] = useState();
-
+  
+  useEffect(() => {
+    timeoutid = setTimeout(myindex, 10000);
+    return () => clearTimeout(timeoutid);
+  }, [questionindex]);
+  
   function myindex() {
     if (!automaticclick) {
       const ans = questions[questionindex].answers;
@@ -23,14 +28,10 @@ const Quiz = () => {
     }
   }
 
-  //if user didn't input a value show answer after
-
-  const timeoutid = setTimeout(myindex, 5000);
-
   function automaticanswer(crctindex, ansindex) {
     if (crctindex) {
       crctindex?.classList.add("active");
-      const filteredindex = indexarr.filter((i) => i != ansindex);
+      const filteredindex = indexarr.filter((i) => i !== ansindex);
       filteredindex.map((item) => {
         myRefs.current[item].classList.add("hiddendisplay");
       });
@@ -46,10 +47,10 @@ const Quiz = () => {
   }
 
   function clickedanswer(e, questionindex, index) {
-    userclicked = true;
+    clearTimeout(timeoutid); 
     if (questions[questionindex].correct === e.target.value) {
       e.target.classList.add("active");
-      const filteredindex = indexarr.filter((i) => i != index);
+      const filteredindex = indexarr.filter((i) => i !==index);
       filteredindex.map((item) => {
         myRefs.current[item].classList.add("hiddendisplay");
       });
@@ -76,7 +77,6 @@ const Quiz = () => {
       });
       clearTimeout(timeoutid);
       setTimeout(() => {
-        // clearTimeout(timeoutid)
         if (questionindex < 3) {
           setQuestionIndex(questionindex + 1);
         } else {
@@ -85,10 +85,14 @@ const Quiz = () => {
       }, 10000);
     }
   }
+  function reset() {
+    setQuestionIndex(0);
 
-  const lengthOfQuestion = questions.length;
+    console.log("after reset", questionindex);
+  }
+  
   if (questionindex === answer) {
-    return <Displaymarks streak={streak} />;
+    return <Displaymarks reset={reset} streak={streak} />;
   }
 
   return (

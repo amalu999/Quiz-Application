@@ -15,19 +15,17 @@ const Header = () => {
         clearInterval(countdownInterval);
         setShowGo(true);
         setTimeout(() => {
-          //navigate("/quiz");
+          navigate("/quiz");
         }, 2000);
       }
     }, 2000);
-
-    // Cleanup interval when component unmounts
     return () => clearInterval(countdownInterval);
   }, [count]);
 
   return (
     <div>
       <div>
-        <h1>Start Quiz</h1>
+        
         <div className="container">
           <div className="goscreen">
             {showGo ? <h1>GO!</h1> : <h1>{count}</h1>}
