@@ -25,7 +25,6 @@ const Header = () => {
   return (
     <div>
       <div>
-        
         <div className="container">
           <div className="goscreen">
             {showGo ? <h1>GO!</h1> : <h1>{count}</h1>}
